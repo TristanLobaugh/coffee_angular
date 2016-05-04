@@ -1,0 +1,128 @@
+body{
+	background-color: #c5a787;
+	color: white;
+}
+
+.navbar{
+	background-color: #284741;
+	img{
+		height: 70px;
+		margin: 10px;
+	}
+	h1{
+		color: #785a3a;
+	}
+	button, h3{
+		float: right;
+		margin: 10px;
+		margin-top: 30px;
+	}
+	button{
+		background-color: #f2f2f2;
+		color: black;
+	}
+}
+.btn-green{
+	background-color: #284741;
+	color: white;
+}
+
+#index-wrapper{
+	margin-top: 90px;
+	font-family: 'Roboto Slab', serif;
+	#better-wrapper{
+		height: 400px;
+		background: url("../img/coffee.jpg") no-repeat;
+		background-position: 0px -250px;
+		background-size: cover;
+	}
+	#how-wrapper{
+		height: 100px;
+		background-color: #edebe3;
+		color: #284741;
+	}
+	.arrow-holder{
+		.arrow-down{
+		    width: 0;
+		    height: 0;
+		    border-left: 30px solid transparent;
+		    border-right: 30px solid transparent;
+		    border-top: 40px solid #edebe3;
+		    position: absolute;
+		    margin-left: 50%;
+		    left: -30px;
+		    top: 0px;
+		}
+	}
+	 #step-one{
+	 	padding-top: 60px;
+		height: 400px;
+		background: url("../img/coffeebags.jpg") no-repeat;
+		background-size: cover;
+	}
+	#arrow-bags{
+		position: absolute;
+		text-align: center;
+	}
+	#step-two{
+		padding-top: 60px;
+		height: 400px;
+		background: #edebe3;
+		color: #284741;
+		#tilted-grower{
+			transform: rotate(-10deg);
+			img{
+				border: 5px solid #284741;
+			}
+		}
+	}
+	#step-three{
+		padding-top: 60px;
+		height: 400px;
+		background: black;
+		color: #edebe3;
+	}
+	#black{
+		border-top: 40px solid black;
+	}
+	#get-started{
+	  	height: 150px;
+	  	padding-top: 60px;
+	  	button{
+	  		font-size: 28px;
+	  	}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
