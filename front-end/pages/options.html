@@ -6,61 +6,69 @@
     </div>
   </div>
   <div class="row">
+    
     <div class="col-sm-4 col-sm-offset-1 plans">
-      <h2 class="plan">Individual Plan</h2>
-      <div>For those who drink alone</div><img src="img/solodrinker.jpg"/>
-      <div class="col-sm-6 text-right">
-        <p>Cups per week:</p>
-        <p>Price per cup:</p>
-        <p>Weekly total:</p>
-        <p>Grind Type:</p>
+      <form role="form" ng-submit="optionsPlan(1)" id="solo-form" name="solo-plan">
+        <h2 class="plan">Individual Plan</h2>
+        <div>For those who drink alone</div><img src="img/solodrinker.jpg"/>
+        <div class="col-sm-6 text-right">
+          <p>Cups per week:</p>
+          <p>Price per cup:</p>
+          <p>Weekly total:</p>
+          <p>Grind Type:</p>
       </div>
-      <div class="col-sm-5 col-sm-offset-1 text-left">
-        <p>14</p>
-        <p>$0.50</p>
-        <p>$7.00</p>
-        <div class="form-group">
-          <select id="sel1" class="form-control">
-            <option>Extra-Coarse</option>
-            <option>Coarse</option>
-            <option>Medium</option>
-            <option>Small</option>
-          </select>
+        <div class="col-sm-5 col-sm-offset-1 text-left">
+          <p>14</p>
+          <p>$0.50</p>
+          <p>$7.00</p>
+            <div class="form-group">
+              <select id="solo-grind" class="form-control" ng-model="grindType" required="soloGrind" width="100">
+                <option value="blank"></option>
+                <option value="extraCoarse">Extra-Coarse</option>
+                <option value="coarse">Coarse</option>
+                <option value="mediumCoarse">Medium-Coarse</option>
+                <option value="fine">Fine</option>
+                <option value="veryFine">Very Fine</option>
+              </select>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-12">
-        <button type="button" class="bnt btn-primary">Submit</button>
-        <div>Shipping is always free</div>
-        <div>Skip any week. Cancel any time.</div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-sm-offset-2 plans">
-      <h2 class="plan">Family Plan</h2>
-      <div>For those who drink together</div><img src="img/coffeedrinkers.jpg"/>
-      <div class="col-sm-6 text-right">
-        <p>Cups per week:</p>
-        <p>Price per cup:</p>
-        <p>Weekly total:</p>
-        <p>Grind Type:</p>
-      </div>
-      <div class="col-sm-5 col-sm-offset-1 text-left">
-        <p>40</p>
-        <p>$0.45</p>
-        <p>$18.00</p>
-        <div class="form-group">
-          <select id="sel1" class="form-control">
-            <option>Extra-Coarse</option>
-            <option>Coarse</option>
-            <option>Medium</option>
-            <option>Small</option>
-          </select>
+        <div class="col-sm-12">
+          <button type="submit" class="bnt btn-primary">Submit</button>
+          <div>Shipping is always free</div>
+          <div>Skip any week. Cancel any time.</div>
         </div>
-      </div>
-      <div class="col-sm-12">
-        <button type="button" class="bnt btn-primary">Submit</button>
-        <div>Shipping is always free</div>
-        <div>Skip any week. Cancel any time.</div>
-      </div>
+      </form>
+    </div> 
+    <div class="col-sm-4 col-sm-offset-1 plans">
+      <form role="form" ng-submit="optionsPlan(2)" id="family-form" name="family-plan">
+        <h2 class="plan">Family Plan</h2>
+        <div>For those who drink together</div><img src="img/coffeedrinkers.jpg"/>
+        <div class="col-sm-6 text-right">
+          <p>Cups per week:</p>
+          <p>Price per cup:</p>
+          <p>Weekly total:</p>
+          <p>Grind Type:</p>
+        </div>
+        <div class="col-sm-5 col-sm-offset-1 text-left">
+          <p>40</p>
+          <p>$0.45</p>
+          <p>$18.00</p>
+            <div class="form-group">
+              <select id="fam-grind" class="form-control" ng-model="grindType" required="familyGrind">
+                <option value="extraCoarse">Extra-Coarse</option>
+                <option value="coarse">Coarse</option>
+                <option value="mediumCoarse">Medium-Coarse</option>
+                <option value="fine">Fine</option>
+                <option value="veryFine">Very Fine</option>
+              </select>
+            </div>
+        </div>
+        <div class="col-sm-12">
+          <button type="submit" class="bnt btn-primary">Submit</button>
+          <div>Shipping is always free</div>
+          <div>Skip any week. Cancel any time.</div>
+        </div>
+      </form>
     </div>
   </div>
   <div class="row">
@@ -68,40 +76,58 @@
     <h2>Prefer to customize your order!!</h2>
     <h4>No problem, Just make your selections below.</h4>
   </div>
-  <div class="row">
-    <div id="frequency-wrapper" class="col-sm-12">
-      <div class="col-sm-6"><img src="img/calendar.png"/></div>
-      <div class="col-sm-6">
-        <h2>1. FREQUENCY</h2>
-        <div>How often would you like us to send you your coffee?</div>
-        <div>You can cancel anytime. You can skip anytime.</div>
+  <form role="form" ng-submit="optionsPlan(3)" id="custom-form" name="custom-plan">
+    <div class="row">
+        <div id="frequency-wrapper" class="col-sm-12">
+          <div class="col-sm-6"><img src="img/calendar.png"/></div>
+          <div class="col-sm-6">
+            <h2>1. FREQUENCY</h2>
+            <div>How often would you like us to send you your coffee?</div>
+              <select id="cust-freq" class="form-control" ng-model="custFrequency" required="custFrequency">
+                <option value="weekly">Weekly</option>
+                <option value="biweekly">Every Two Weeks</option>
+                <option value="monthly">Monthly</option>
+                <option value="quarterly">Quarterly</option>
+                <option value="semiAnnually">Semi-Annually</option>
+                <option value="annually">Annually</option>
+              </select>
+            <div>You can cancel anytime. You can skip anytime.</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div id="quantity-wrapper" class="col-sm-12">
-      <div class="col-sm-6"><img src="img/food-scale.png"/></div>
-      <div class="col-sm-6">
-        <h2>2. QUANTITY</h2>
-        <div>How many pounds in increments of 25lb would you like each delivery?</div>
-        <div>$20.00/lb</div>
-        <div>You can cancel anytime. You can skip anytime.</div>
+      <div class="row">
+        <div id="quantity-wrapper" class="col-sm-12">
+          <div class="col-sm-6"><img src="img/food-scale.png"/></div>
+          <div class="col-sm-6">
+            <h2>2. QUANTITY</h2>
+            <div>How many pounds in increments of 25lb would you like each delivery?</div>
+            <div>$20.00/lb</div>
+            <input type="number" name="quarterPounds" ng-model="quarterPounds" step="0.25" min="0" required="quarterPounds">
+            <div>You can cancel anytime. You can skip anytime.</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div id="grindtype-wrapper" class="col-sm-12">
-      <div class="col-sm-6"><img src="img/beans.png"/></div>
-      <div class="col-sm-6">
-        <h2>1. GRIND TYPE</h2>
-        <div>How do you like your grinds?</div>
-        <div>You can cancel anytime. You can skip anytime.</div>
+      <div class="row">
+        <div id="grindtype-wrapper" class="col-sm-12">
+          <div class="col-sm-6"><img src="img/beans.png"/></div>
+          <div class="col-sm-6">
+            <h2>1. GRIND TYPE</h2>
+            <div>How do you like your grinds?</div>
+              <select id="cust-grind" class="form-control" ng-model="grindType" required="custGrind">
+                <option value="extraCoarse">Extra-Coarse</option>
+                <option value="coarse">Coarse</option>
+                <option value="mediumCoarse">Medium-Coarse</option>
+                <option value="fine">Fine</option>
+                <option value="veryFine">Very Fine</option>
+              </select>
+            <div>You can cancel anytime. You can skip anytime.</div>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <div id="submit-wrapper" class="col-sm-12">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
   </div>
-  <div class="row">
-    <div id="submit-wrapper" class="col-sm-12">
-      <button type="button" class="btn btn-primary">Submit</button>
-    </div>
-  </div>
-</div>
