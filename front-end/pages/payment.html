@@ -3,16 +3,47 @@
 		<h1>Payment</h1>
 		<h3>Order summary below</h3>
 	</div>
-	<div class="row">
-		<div id="summary-wrapper" class="col-sm-12">
-			<h1>Choices</h1>
-			<div class="col-sm-6">Grind</div>
-			<div class="col-sm-6">{{grindOrder}}</div>
-			<div class="col-sm-6">Frequency of Delivery</div>
-			<div class="col-sm-6">{{freqOrder}}</div>
-			<div class="col-sm-6">Coffee in Pounds</div>
-			<div class="col-sm-6">{{poundsOrder}}</div>
+	<div id="summary-wrapper" class="col-sm-12">
+		<div class="row">
+			<div id="choises-wrapper">
+					<h1>Choices</h1>
+					<div class="col-sm-6">Grind</div><div class="col-sm-6">{{grindOrder}}</div>
+					<div class="col-sm-6">Frequency of Delivery</div><div class="col-sm-6">{{freqOrder}}</div>
+					<div class="col-sm-6">Coffee in Pounds</div><div class="col-sm-6">{{poundsOrder}}</div>
+			</div>
 		</div>
+		<div class="row">
+			<div id="delivery-info-wrapper">
+				<h1>Delivery Information</h1>
+				<div class="col-sm-6">Full Name</div><div class="col-sm-6">{{fullNameOrder}}</div>
+				<div class="col-sm-6">Address</div><div class="col-sm-6">{{addressOrder}}</div>
+				<div class="col-sm-6">Address2</div><div class="col-sm-6">{{address2Order}}</div>
+				<div class="col-sm-6">City</div><div class="col-sm-6">{{cityOrder}}</div>
+				<div class="col-sm-6">State</div><div class="col-sm-6">{{stateOrder}}</div>
+				<div class="col-sm-6">Zip</div><div class="col-sm-6">{{zipOrder}}</div>
+				<div class="col-sm-6">Delivery Date</div><div class="col-sm-6">{{deliveryDateOrder}}</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="delivery-info-wrapper">
+				<h1>Current Charge</h1>
+				<div class="col-sm-6">Quantity</div><div class="col-sm-6">{{quantityOrder}}</div>
+				<div class="col-sm-6">Shipping</div><div class="col-sm-6">{{shippingOrder}}</div>
+				<div class="col-sm-6">Total</div><div class="col-sm-6">{{totalOrder}}</div>
+			</div>
+		</div>		
 	</div>
-	
+
+<form action="" method="POST">
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_ViWLfNRoKDqu24EF4Y8aBvaL"
+    data-amount="999"
+    data-name="DC Roasters"
+    data-description="Coffee Order"
+    data-image="/img/logo.png"
+    data-locale="auto">
+  </script>
+</form>
+
 </div>

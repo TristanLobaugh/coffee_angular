@@ -1,6 +1,10 @@
 var coffeeApp = angular.module("coffeeApp", ["ngRoute", "ngCookies"]);
 var apiPath = "http://localhost:3000/";
 
+// Test Secret Key: sk_test_ZaURxApp5wezFDObaQZEUFoF
+
+// Test Publishable Key: pk_test_ViWLfNRoKDqu24EF4Y8aBvaL
+
 coffeeApp.config(function($routeProvider){
 	$routeProvider.when("/", {
 		templateUrl: "pages/main.html",
@@ -27,7 +31,7 @@ coffeeApp.config(function($routeProvider){
 		controller: "coffeeController"
 	});
 	$routeProvider.when("/payment", {
-		templateUrl: "pages/shipping.html",
+		templateUrl: "pages/payment.html",
 		controller: "coffeeController"
 	});
 	$routeProvider.otherwise({
@@ -36,7 +40,9 @@ coffeeApp.config(function($routeProvider){
 });
 
 coffeeApp.controller("coffeeController", function($scope, $http, $location, $cookies){
+		$scope.message = $cookies.get("username");
 
+//MOVE TO OPTIONS CONTROLLER*******************
 		$http.get(apiPath + "getUserData?token=" + $cookies.get("token"), {
 		}).then(function successCallback(response){
 			if(response.data.failure == "badToken"){
@@ -49,6 +55,7 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 		}, function errorCallback(response){
 			console.log(response.status);
 		});
+//**************
 
 		$scope.loginForm = function(){
 		$http.post(apiPath + "login", {
@@ -71,24 +78,23 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 
 
 	$scope.registerForm = function(form){
-		$scope.message = $scope.username;
-		$http.post(apiPath + "register", {
-			username: $scope.username,
-			password: $scope.password,
-			password2: $scope.password2,
-			email: $scope.email
-		}).then(function successCallback(response){
-			console.log(response.data.failure);
-			if(response.data.failure == "passwordMatch"){
-				$scope.errorMessage = "Your passwords don't match.";
-			}else if(response.data.success == "added"){
-				$cookies.put("token", response.data.token);
-				$cookies.put("username", $scope.username);
-				$location.path("/options");
-			}
-		}, function errorCallback(response){
-			console.log(response.status);
-		});
+		if($scope.password != $scope.password2){
+			$scope.errorMessage = "Your passwords don't match.";
+		}else{
+			$http.post(apiPath + "register", {
+				username: $scope.username,
+				password: $scope.password,
+				password2: $scope.password2,
+				email: $scope.email
+			}).then(function successCallback(response){
+				console.log(response.data.failure);
+					$cookies.put("token", response.data.token);
+					$cookies.put("username", $scope.username);
+					$location.path("/options");
+			}, function errorCallback(response){
+				console.log(response.status);
+			});
+		}
 	}
 
 //OPTIONS PAGE
@@ -146,7 +152,7 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 				token: $cookies.get("token")
 			}).then(function successCallback(response){
 				if(response.data.success === "update"){
-				$location.path("/payment");
+				$location.path("/checkout");
 				}
 			}, function errorCallback(response){
 				console.log("ERROR, Will Robinson");

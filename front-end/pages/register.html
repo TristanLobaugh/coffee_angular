@@ -6,9 +6,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6 registration-wrapper text-center">
+    <div id-"registration-wrapper" class="col-sm-6 col-sm-offset-3 text-center">
       <form role="form" ng-submit="registerForm(this)" id="registration-form" name="registration">
-        <h3>{{errorMeesage}}</h3>
+        <h4 class="error-message">{{errorMeesage}}</h4>
         <div class="form-group">
           <label>Username:</label>
           <input type="text" ng-model="username" placeholder="John Smith" minlength="5" class="form-control" required="username">
