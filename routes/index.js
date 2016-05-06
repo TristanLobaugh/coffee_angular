@@ -33,8 +33,7 @@ router.post("/register", function(req, res, next){
 			success: "added",
 			token: token
 		});
-	}
-});
+	});
 
 router.post("/login", function(req, res, next){
 	Account.findOne(
