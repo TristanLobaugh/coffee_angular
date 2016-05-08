@@ -1,20 +1,16 @@
 body{
-	background-color: #c5a787;
+	background-color: $primary-white;
 	color: white;
 }
 .container{
 
 }
-
 .navbar{
 	border: none;
-	background-color: #284741;
+	background-color: $primary-green;
 	img{
 		height: 70px;
 		margin: 10px;
-	}
-	h1{
-		color: #785a3a;
 	}
 	button, h3{
 		float: right;
@@ -22,27 +18,34 @@ body{
 		margin-top: 30px;
 	}
 	button{
-		background-color: #f2f2f2;
+		background-color: $primary-white;
 		color: black;
 	}
 }
 .btn-green{
-	background-color: #284741;
+	background-color: $primary-green;
 	color: white;
 }
 #small-nav-bar{
 	margin-top: 90px;
 	height: 35px;
-	background-color: #8c8c8c;
+	background-color: $primary-grey;
 	div{
-		padding-top: 5px;
 		display: inline;
 	}
 	a{
-		color: #edebe3;;
+		height: 35px;
+		text-align: center;
+		color: $primary-white;
 		text-decoration: none;
 
 	}
+}
+.active{
+	background-color: $secondary-grey;
+}
+.footer{
+	color: $secondary-grey;
 }
 
 #index-wrapper{
@@ -56,8 +59,8 @@ body{
 	}
 	#how-wrapper{
 		height: 100px;
-		background-color: #edebe3;
-		color: #284741;
+		background-color: $primary-white;
+		color: $primary-green;
 	}
 	.arrow-holder{
 		.arrow-down{
@@ -65,7 +68,7 @@ body{
 		    height: 0;
 		    border-left: 30px solid transparent;
 		    border-right: 30px solid transparent;
-		    border-top: 40px solid #edebe3;
+		    border-top: 40px solid $primary-white;
 		    position: absolute;
 		    margin-left: 50%;
 		    left: -30px;
@@ -85,12 +88,12 @@ body{
 	#step-two{
 		padding-top: 60px;
 		height: 400px;
-		background: #edebe3;
-		color: #284741;
+		background: $primary-white;
+		color: $primary-green;
 		#tilted-grower{
 			transform: rotate(-10deg);
 			img{
-				border: 5px solid #284741;
+				border: 5px solid $primary-green;
 			}
 		}
 	}
@@ -98,7 +101,7 @@ body{
 		padding-top: 60px;
 		height: 400px;
 		background: black;
-		color: #edebe3;
+		color: $primary-white;
 	}
 	#black{
 		border-top: 40px solid black;

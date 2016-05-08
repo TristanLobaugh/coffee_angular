@@ -1,81 +1,88 @@
-/* line 1, ../../compass/sass/_base.scss */
+/* line 6, ../../compass/sass/_base.scss */
 img {
   max-width: 100%;
 }
 
-/* line 1, ../../compass/sass/_home.scss */
+/* line 1, ../../compass/sass/_main.scss */
 body {
-  background-color: #c5a787;
+  background-color: #edebe3;
   color: white;
 }
 
-/* line 9, ../../compass/sass/_home.scss */
+/* line 8, ../../compass/sass/_main.scss */
 .navbar {
   border: none;
   background-color: #284741;
 }
-/* line 12, ../../compass/sass/_home.scss */
+/* line 11, ../../compass/sass/_main.scss */
 .navbar img {
   height: 70px;
   margin: 10px;
 }
-/* line 16, ../../compass/sass/_home.scss */
-.navbar h1 {
-  color: #785a3a;
-}
-/* line 19, ../../compass/sass/_home.scss */
+/* line 15, ../../compass/sass/_main.scss */
 .navbar button, .navbar h3 {
   float: right;
   margin: 10px;
   margin-top: 30px;
 }
-/* line 24, ../../compass/sass/_home.scss */
+/* line 20, ../../compass/sass/_main.scss */
 .navbar button {
-  background-color: #f2f2f2;
+  background-color: #edebe3;
   color: black;
 }
 
-/* line 29, ../../compass/sass/_home.scss */
+/* line 25, ../../compass/sass/_main.scss */
 .btn-green {
   background-color: #284741;
   color: white;
 }
 
-/* line 33, ../../compass/sass/_home.scss */
+/* line 29, ../../compass/sass/_main.scss */
 #small-nav-bar {
   margin-top: 90px;
   height: 35px;
   background-color: #8c8c8c;
 }
-/* line 37, ../../compass/sass/_home.scss */
+/* line 33, ../../compass/sass/_main.scss */
 #small-nav-bar div {
-  padding-top: 5px;
   display: inline;
 }
-/* line 41, ../../compass/sass/_home.scss */
+/* line 36, ../../compass/sass/_main.scss */
 #small-nav-bar a {
+  height: 35px;
+  text-align: center;
   color: #edebe3;
   text-decoration: none;
 }
 
-/* line 48, ../../compass/sass/_home.scss */
+/* line 44, ../../compass/sass/_main.scss */
+.active {
+  background-color: #737373;
+}
+
+/* line 47, ../../compass/sass/_main.scss */
+.footer {
+  color: #737373;
+}
+
+/* line 51, ../../compass/sass/_main.scss */
 #index-wrapper {
   font-family: 'Roboto Slab', serif;
 }
-/* line 51, ../../compass/sass/_home.scss */
+/* line 54, ../../compass/sass/_main.scss */
 #index-wrapper #better-wrapper {
   height: 400px;
   background: url("../img/coffee.jpg") no-repeat;
   background-position: 0px -250px;
   background-size: cover;
 }
-/* line 57, ../../compass/sass/_home.scss */
+/* line 60, ../../compass/sass/_main.scss */
 #index-wrapper #how-wrapper {
   height: 100px;
   background-color: #edebe3;
   color: #284741;
 }
-/* line 63, ../../compass/sass/_home.scss */
+/* line 66, ../../compass/sass/_main.scss */
 #index-wrapper .arrow-holder .arrow-down {
   width: 0;
   height: 0;
@@ -87,50 +94,157 @@ body {
   left: -30px;
   top: 0px;
 }
-/* line 75, ../../compass/sass/_home.scss */
+/* line 78, ../../compass/sass/_main.scss */
 #index-wrapper #step-one {
   padding-top: 60px;
   height: 400px;
   background: url("../img/coffeebags.jpg") no-repeat;
   background-size: cover;
 }
-/* line 81, ../../compass/sass/_home.scss */
+/* line 84, ../../compass/sass/_main.scss */
 #index-wrapper #arrow-bags {
   position: absolute;
   text-align: center;
 }
-/* line 85, ../../compass/sass/_home.scss */
+/* line 88, ../../compass/sass/_main.scss */
 #index-wrapper #step-two {
   padding-top: 60px;
   height: 400px;
   background: #edebe3;
   color: #284741;
 }
-/* line 90, ../../compass/sass/_home.scss */
+/* line 93, ../../compass/sass/_main.scss */
 #index-wrapper #step-two #tilted-grower {
   transform: rotate(-10deg);
 }
-/* line 92, ../../compass/sass/_home.scss */
+/* line 95, ../../compass/sass/_main.scss */
 #index-wrapper #step-two #tilted-grower img {
   border: 5px solid #284741;
 }
-/* line 97, ../../compass/sass/_home.scss */
+/* line 100, ../../compass/sass/_main.scss */
 #index-wrapper #step-three {
   padding-top: 60px;
   height: 400px;
   background: black;
   color: #edebe3;
 }
-/* line 103, ../../compass/sass/_home.scss */
+/* line 106, ../../compass/sass/_main.scss */
 #index-wrapper #black {
   border-top: 40px solid black;
 }
-/* line 106, ../../compass/sass/_home.scss */
+/* line 109, ../../compass/sass/_main.scss */
 #index-wrapper #get-started {
   height: 150px;
   padding-top: 60px;
 }
-/* line 109, ../../compass/sass/_home.scss */
+/* line 112, ../../compass/sass/_main.scss */
 #index-wrapper #get-started button {
   font-size: 28px;
+}
+
+/* line 1, ../../compass/sass/_options.scss */
+#options-wrapper {
+  color: black;
+}
+
+/* line 4, ../../compass/sass/_options.scss */
+.plans {
+  font-size: 20px;
+  background-color: white;
+  width: 45%;
+  margin: 2.5%;
+}
+/* line 9, ../../compass/sass/_options.scss */
+.plans img {
+  margin: 15px 0;
+}
+/* line 12, ../../compass/sass/_options.scss */
+.plans button {
+  margin: 20px 0;
+  font-size: 20px;
+  background-color: #284741;
+  padding: 0 40px;
+}
+
+/* line 19, ../../compass/sass/_options.scss */
+.choices {
+  border: 1px solid #737373;
+  margin: 20px 0;
+  border-radius: 5px;
+  padding: 40px;
+}
+/* line 24, ../../compass/sass/_options.scss */
+.choices img {
+  display: block;
+  margin: auto;
+}
+/* line 28, ../../compass/sass/_options.scss */
+.choices select, .choices input {
+  width: 50%;
+  margin: 10px 0;
+}
+
+/* line 34, ../../compass/sass/_options.scss */
+#submit-wrapper button {
+  margin: 20px 0;
+  font-size: 22px;
+  background-color: #284741;
+  padding: 0 40px;
+}
+
+/* line 1, ../../compass/sass/_payment.scss */
+#payment-wrapper {
+  color: black;
+}
+/* line 3, ../../compass/sass/_payment.scss */
+#payment-wrapper #summary-wrapper {
+  font-size: 20px;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+/* line 9, ../../compass/sass/_payment.scss */
+#payment-wrapper .section {
+  padding: 20px 10px;
+}
+/* line 12, ../../compass/sass/_payment.scss */
+#payment-wrapper .stripe-button-el {
+  width: 120px;
+  margin: 30px 0;
+  background-color: #284741;
+}
+/* line 17, ../../compass/sass/_payment.scss */
+#payment-wrapper #cancel {
+  width: 120px;
+  padding: 0 5px;
+  margin: 30px 0;
+  height: 30px;
+  color: white;
+  background-color: red;
+}
+
+/* line 1, ../../compass/sass/_shipping.scss */
+#shipping-wrapper {
+  color: black;
+}
+/* line 3, ../../compass/sass/_shipping.scss */
+#shipping-wrapper #shipping-form-wrapper {
+  margin: 20px 0;
+  border: 1px solid #737373;
+  border-radius: 5px;
+}
+/* line 7, ../../compass/sass/_shipping.scss */
+#shipping-wrapper #shipping-form-wrapper #shipping-info-wrapper {
+  margin-top: 50px;
+}
+/* line 9, ../../compass/sass/_shipping.scss */
+#shipping-wrapper #shipping-form-wrapper #shipping-info-wrapper .form-group {
+  padding: 10px;
+}
+/* line 13, ../../compass/sass/_shipping.scss */
+#shipping-wrapper #shipping-form-wrapper button {
+  margin: 20px 0;
+  font-size: 22px;
+  background-color: #284741;
+  padding: 0 40px;
 }

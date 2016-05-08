@@ -1,0 +1,71 @@
+#options-wrapper{
+	color: black;
+}
+.plans{
+	font-size: 20px;
+	background-color: white;
+	width: 45%;
+	margin: 2.5%;
+	img{
+		margin: 15px 0;
+	}
+	button{
+		margin: 20px 0;
+		font-size: 20px;
+		background-color: $primary-green;
+		padding: 0 40px;
+	}
+}
+.choices{
+	border: 1px solid $secondary-grey;
+	margin: 20px 0;
+	border-radius: 5px;
+	padding: 40px;
+	img{
+		display: block;
+		margin: auto;
+	}
+	select, input{
+		width: 50%;
+		margin: 10px 0;
+	}
+}
+#submit-wrapper{
+	button{
+		margin: 20px 0;
+		font-size: 22px;
+		background-color: $primary-green;
+		padding: 0 40px;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
