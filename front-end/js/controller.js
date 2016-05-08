@@ -44,7 +44,12 @@ coffeeApp.config(function($routeProvider){
 });
 
 coffeeApp.controller("coffeeController", function($scope, $http, $location, $cookies){
-		$scope.message = $cookies.get("username");
+		if($cookies.get("username")){
+			$scope.message = "Welcome back: " + $cookies.get("username");
+		}else{
+			$scope.message = false;
+		}
+		
 
 		$scope.loginForm = function(){
 		$http.post(apiPath + "login", {
@@ -87,7 +92,11 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 });
 
 coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $cookies){
-	
+	if($cookies.get("username")){
+			$scope.message = "Welcome back: " + $cookies.get("username");
+		}else{
+			$scope.message = false;
+		}
 
 	$http.get(apiPath + "getUserData?token=" + $cookies.get("token"), {
 	}).then(function successCallback(response){

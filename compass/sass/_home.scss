@@ -3,10 +3,11 @@ body{
 	color: white;
 }
 .container{
-	margin-top: 90px;
+
 }
 
 .navbar{
+	border: none;
 	background-color: #284741;
 	img{
 		height: 70px;
@@ -29,9 +30,23 @@ body{
 	background-color: #284741;
 	color: white;
 }
+#small-nav-bar{
+	margin-top: 90px;
+	height: 35px;
+	background-color: #8c8c8c;
+	div{
+		padding-top: 5px;
+		display: inline;
+	}
+	a{
+		color: #edebe3;;
+		text-decoration: none;
+
+	}
+}
 
 #index-wrapper{
-	margin-top: 90px;
+	// margin-top: 90px;
 	font-family: 'Roboto Slab', serif;
 	#better-wrapper{
 		height: 400px;
