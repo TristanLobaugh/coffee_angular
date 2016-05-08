@@ -142,6 +142,19 @@ body {
   font-size: 28px;
 }
 
+/* line 1, ../../compass/sass/_login.scss */
+#login-wrapper {
+  color: black;
+}
+/* line 3, ../../compass/sass/_login.scss */
+#login-wrapper button {
+  margin: 20px 0;
+  color: white;
+  font-size: 22px;
+  background-color: #284741;
+  padding: 0 40px;
+}
+
 /* line 1, ../../compass/sass/_options.scss */
 #options-wrapper {
   color: black;
@@ -221,6 +234,19 @@ body {
   height: 30px;
   color: white;
   background-color: red;
+}
+
+/* line 1, ../../compass/sass/_register.scss */
+#registration-wrapper {
+  color: black;
+}
+/* line 3, ../../compass/sass/_register.scss */
+#registration-wrapper button {
+  margin: 20px 0;
+  color: white;
+  font-size: 22px;
+  background-color: #284741;
+  padding: 0 40px;
 }
 
 /* line 1, ../../compass/sass/_shipping.scss */

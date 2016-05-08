@@ -6,7 +6,7 @@
     </div>
   </div>
   <div class="row">
-    <div id="login-wrapper" class="col-sm-6 col-sm-offset-3 text-center">
+    <div id="login-wrapper" class="col-sm-6 col-sm-offset-3">
       <form role="form" ng-submit="loginForm(this)" id="login-form" name="login">
         <h2>{{errorMessage}}</h2>
         <div class="form-group">
@@ -17,7 +17,7 @@
           <label>Password:</label>
           <input type="password" ng-model="password" placeholder="Enter Your Password" class="form-control" required="password">
         </div>
-        <div class="button-holder">
+        <div class="button-holder text-center">
           <button type="submit" class="btn btn-success">Login</button>
         </div>
       </form>

@@ -92,6 +92,7 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 });
 
 coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $cookies){
+
 	if($cookies.get("username")){
 			$scope.message = "Welcome back: " + $cookies.get("username");
 		}else{
@@ -106,6 +107,17 @@ coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $co
 			$location.path("/register");
 		}else{
 			$scope.userOptions = response.data;
+			console.log($scope.userOptions);
+			$scope.grindType = $scope.userOptions.grind;
+			$scope.frequency = $scope.userOptions.frequency;
+			$scope.quantity = $scope.userOptions.quantity;	
+			$scope.fullname = $scope.userOptions.fullname;
+			$scope.address1 = $scope.userOptions.address;
+			$scope.address2 = $scope.userOptions.address2;
+			$scope.city = $scope.userOptions.city;
+			$scope.state = $scope.userOptions.state;
+			$scope.zipCode = $scope.userOptions.zip;
+			$scope.date = $scope.userOptions.deliveryDate;
 		}
 	}, function errorCallback(response){
 		console.log(response.status);
@@ -115,7 +127,7 @@ coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $co
 	$scope.optionsPlan = function(plan){
 		if(plan === 1){
 			$http.post(apiPath + "options",{
-				quantity: "1",
+				quantity: 1,
 				frequency: "monthly",
 				grind: $scope.grindType,
 				token: $cookies.get("token")
@@ -154,23 +166,31 @@ coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $co
 	}
 
 //SHIPPING PAGE
-		$scope.shippingInfo = function(form){
-			$http.post(apiPath + "shipping",{
-				fullname: $scope.fullname,
-				address: $scope.address1,
-				address2: $scope.address2,
-				city: $scope.city,
-				state: $scope.state,
-				zip: $scope.zipCode,
-				deliveryDate: $scope.date,
-				token: $cookies.get("token")
-			}).then(function successCallback(response){
-				if(response.data.success === "update"){
-				$location.path("/checkout");
-				}
-			}, function errorCallback(response){
-				console.log("ERROR, Will Robinson");
-			});
+	$scope.shippingInfo = function(form){
+		$http.post(apiPath + "shipping",{
+			fullname: $scope.fullname,
+			address: $scope.address1,
+			address2: $scope.address2,
+			city: $scope.city,
+			state: $scope.state,
+			zip: $scope.zipCode,
+			deliveryDate: $scope.date,
+			token: $cookies.get("token")
+		}).then(function successCallback(response){
+			if(response.data.success === "update"){
+			$location.path("/payment");
+			}
+		}, function errorCallback(response){
+			console.log("ERROR, Will Robinson");
+		});
 	}
+
+//PAYMENT PAGE
+	
+
+
+
+
+
 //END CONTROLLER
 });
