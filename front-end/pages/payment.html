@@ -34,16 +34,18 @@
 		</div>		
 	</div>
 
-<form action="" method="POST">
+<form action="http://localhost:3000/payment" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_ViWLfNRoKDqu24EF4Y8aBvaL"
     data-amount="999"
     data-name="DC Roasters"
-    data-description="Coffee Order"
+    data-description="Widget"
     data-image="/coffee/front-end/img/logo.png"
     data-locale="auto">
   </script>
+  <input type="hidden" name="stripeAmt" value="4000">
+  <input type="hidden" name="stripeEmail" value="testEmail@test.com">
 </form>
 
 </div>

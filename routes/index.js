@@ -6,6 +6,10 @@ var Account = require("../models/accounts");
 var bcrypt = require("bcrypt-nodejs");
 var randToken =  require("rand-token");
 mongoose.connect(mongoUrl);
+var stripe = require("stripe")(
+  "sk_test_ZaURxApp5wezFDObaQZEUFoF"
+);
+
 
 /* GET home page. */
 
@@ -62,12 +66,11 @@ router.post("/options", function(req,res,next){
 		{token: req.body.token},
 		{quantity: req.body.quantity, frequency: req.body.frequency, grind: req.body.grind},
 		{multi: true},
-		function(err, account){
-			if (account == null){
-				//no doc in db
-			}else{
-
+		function(err, numberAffected){
+			if (numberAffected.ok == 1){
 				res.json({success: "update"});
+			}else{
+				res.json({failure: "failedupdate"});
 			}
 		}
 	)
@@ -78,19 +81,28 @@ router.post("/shipping", function(req,res,next){
 		{token: req.body.token},
 		{fullname: req.body.fullname, address: req.body.address, address2: req.body.address2, city: req.body.city, state: req.body.state, zip: req.body.zip, deliveryDate: req.body.deliveryDate},
 		{multi: true},
-		function(err, account){
-			if (account == null){
-				//no doc in db
-			}else{
-				//we got a record and updated it
-				account.save;
+		function(err, numberAffected){
+			if (numberAffected.ok == 1){
 				res.json({success: "update"});
+			}else{
+				res.json({failure: "failedupdate"});
 			}
 		}
 	)
 });
 
-
+router.post("/payment", function(req, res, next){
+		stripe.charges.create({
+		  amount: req.body.stripeAmt,
+		  currency: "usd",
+		  source: req.body.stripeToken, // obtained with Stripe.js
+		  description: "Charge for " + req.body.stripeEmail
+		}, function(err, charge) {
+		  // asynchronously called
+		  console.log(err);
+		  res.json(charge);
+		});
+});
 
 
 

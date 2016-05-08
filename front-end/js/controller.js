@@ -20,19 +20,23 @@ coffeeApp.config(function($routeProvider){
 	});
 	$routeProvider.when("/options", {
 		templateUrl: "pages/options.html",
-		controller: "coffeeController"
-	});
-	$routeProvider.when("/delivery", {
-		templateUrl: "pages/delivery.html",
-		controller: "coffeeController"
+		controller: "coffee2Controller"
 	});
 	$routeProvider.when("/shipping", {
 		templateUrl: "pages/shipping.html",
-		controller: "coffeeController"
+		controller: "coffee2Controller"
 	});
 	$routeProvider.when("/payment", {
 		templateUrl: "pages/payment.html",
-		controller: "coffeeController"
+		controller: "coffee2Controller"
+	});
+	$routeProvider.when("/success", {
+		templateUrl: "pages/success.html",
+		controller: "coffee2Controller"
+	});
+	$routeProvider.when("/failure", {
+		templateUrl: "pages/failure.html",
+		controller: "coffee2Controller"
 	});
 	$routeProvider.otherwise({
 		redirectTo: "/"
@@ -41,21 +45,6 @@ coffeeApp.config(function($routeProvider){
 
 coffeeApp.controller("coffeeController", function($scope, $http, $location, $cookies){
 		$scope.message = $cookies.get("username");
-
-//MOVE TO OPTIONS CONTROLLER*******************
-		$http.get(apiPath + "getUserData?token=" + $cookies.get("token"), {
-		}).then(function successCallback(response){
-			if(response.data.failure == "badToken"){
-				//User needs to log in
-				console.log("badToken");
-				$location.path("/register");
-			}else{
-				$scope.userOptions = response.data;
-			}
-		}, function errorCallback(response){
-			console.log(response.status);
-		});
-//**************
 
 		$scope.loginForm = function(){
 		$http.post(apiPath + "login", {
@@ -87,7 +76,6 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 				password2: $scope.password2,
 				email: $scope.email
 			}).then(function successCallback(response){
-				console.log(response.data.failure);
 					$cookies.put("token", response.data.token);
 					$cookies.put("username", $scope.username);
 					$location.path("/options");
@@ -96,8 +84,25 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 			});
 		}
 	}
+});
 
-//OPTIONS PAGE
+coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $cookies){
+	
+
+	$http.get(apiPath + "getUserData?token=" + $cookies.get("token"), {
+	}).then(function successCallback(response){
+		if(response.data.failure == "badToken"){
+			//User needs to log in
+			console.log("badToken");
+			$location.path("/register");
+		}else{
+			$scope.userOptions = response.data;
+		}
+	}, function errorCallback(response){
+		console.log(response.status);
+	});
+
+
 	$scope.optionsPlan = function(plan){
 		if(plan === 1){
 			$http.post(apiPath + "options",{
@@ -158,26 +163,5 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 				console.log("ERROR, Will Robinson");
 			});
 	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //END CONTROLLER
 });
