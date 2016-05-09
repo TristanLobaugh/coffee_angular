@@ -12,7 +12,7 @@
 
 ## Demo
 
-[Live Demo](http://tristanlobaugh.com/coffee)
+[Live Demo](http://tristanlobaugh.com/coffee/front-end)
 
 ## Screenshots
 
