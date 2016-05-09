@@ -62,6 +62,7 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 				if(response.data.success == "found"){
 					$cookies.put("token", response.data.token);
 					$cookies.put("username", $scope.username);
+					$scope.message = "Welcome back: " + $cookies.get("username");
 					$("#login").hide();
 					$("#logout").show();
 					$location.path("/options");
@@ -88,6 +89,7 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 			}).then(function successCallback(response){
 					$cookies.put("token", response.data.token);
 					$cookies.put("username", $scope.username);
+					$scope.message = "Welcome back: " + $cookies.get("username");
 					$("#login").hide();
 					$("#logout").show();
 					$location.path("/options");
