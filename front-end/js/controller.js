@@ -118,7 +118,6 @@ coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $co
 			$location.path("/register");
 		}else{
 			$scope.userOptions = response.data;
-			console.log($scope.userOptions);
 			$scope.grindType = $scope.userOptions.grind;
 			$scope.frequency = $scope.userOptions.frequency;
 			$scope.quantity = $scope.userOptions.quantity;	
