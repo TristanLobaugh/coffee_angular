@@ -1,5 +1,5 @@
 var coffeeApp = angular.module("coffeeApp", ["ngRoute", "ngCookies"]);
-var apiPath = "http://localhost:3000/";
+var apiPath = "http://tristanlobaugh.com:3020/";
 
 // Test Secret Key: sk_test_ZaURxApp5wezFDObaQZEUFoF
 
