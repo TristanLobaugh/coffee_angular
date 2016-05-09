@@ -46,8 +46,10 @@ coffeeApp.config(function($routeProvider){
 coffeeApp.controller("coffeeController", function($scope, $http, $location, $cookies){
 		if($cookies.get("username")){
 			$scope.message = "Welcome back: " + $cookies.get("username");
+			$scope.loggedOut = false;
 		}else{
 			$scope.message = false;
+			$scope.loggedOut = true;
 		}
 		
 
@@ -59,6 +61,7 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 			if(response.data.success == "found"){
 				$cookies.put("token", response.data.token);
 				$cookies.put("username", $scope.username);
+				$scope.loggedOut = false;
 				$location.path("/options");
 			}else if(response.data.failure == "noUser"){
 				$scope.errorMessage = "No such user in the db";
@@ -83,21 +86,24 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 			}).then(function successCallback(response){
 					$cookies.put("token", response.data.token);
 					$cookies.put("username", $scope.username);
+					$scope.loggedOut = false;
 					$location.path("/options");
 			}, function errorCallback(response){
 				console.log(response.status);
 			});
 		}
 	}
+
+	$scope.logOut = function(){
+		$cookies.remove("token");
+		$cookies.remove("username");
+		$scope.message = false;
+		$scope.loggedOut = true;
+	}
+
 });
 
 coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $cookies){
-
-	if($cookies.get("username")){
-			$scope.message = "Welcome back: " + $cookies.get("username");
-		}else{
-			$scope.message = false;
-		}
 
 	$http.get(apiPath + "getUserData?token=" + $cookies.get("token"), {
 	}).then(function successCallback(response){
@@ -151,7 +157,7 @@ coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $co
 			});
 		}else if(plan === 3){
 			$http.post(apiPath + "options",{
-				quantity: $scope.quantity,
+				quantity: $scope.quarterPounds,
 				frequency: $scope.frequency,
 				grind: $scope.grindType,
 				token: $cookies.get("token")
@@ -185,12 +191,7 @@ coffeeApp.controller("coffee2Controller", function($scope, $http, $location, $co
 		});
 	}
 
-//PAYMENT PAGE
-	
-
-
-
-
-
 //END CONTROLLER
 });
+
+
