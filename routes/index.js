@@ -79,7 +79,15 @@ router.post("/options", function(req,res,next){
 router.post("/shipping", function(req,res,next){
 	Account.update(
 		{token: req.body.token},
-		{fullname: req.body.fullname, address: req.body.address, address2: req.body.address2, city: req.body.city, state: req.body.state, zip: req.body.zip, deliveryDate: req.body.deliveryDate},
+		{
+		fullname: req.body.fullname, 
+		address: req.body.address, 
+		address2: req.body.address2, 
+		city: req.body.city, 
+		state: req.body.state, 
+		zip: req.body.zip, 
+		deliveryDate: req.body.deliveryDate
+		},
 		{multi: true},
 		function(err, numberAffected){
 			if (numberAffected.ok == 1){

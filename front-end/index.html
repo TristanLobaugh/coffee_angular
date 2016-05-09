@@ -23,13 +23,13 @@
 			<div class="col-sm-3"><a href="#/">
 				<img src="img/dc_roasters.png"/></a></div>
 			<div class="col-sm-4"></div>
-			<div class="col-sm-5" ng-show="message">
+			<div id="logout" class="col-sm-5">
 				<a href="#/" ng-click="logOut()">
 					<button class="btn btn-white" type="button">Logout</button>
 				</a>
 				<h3>{{message}}</h3>
 			</div>
-			<div class="col-sm-5" ng-show="loggedOut">
+			<div id="login" class="col-sm-5">
 				<a href="#/login">
 					<button class="btn btn-white" type="button">Login</button>
 				</a>

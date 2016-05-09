@@ -46,32 +46,34 @@ coffeeApp.config(function($routeProvider){
 coffeeApp.controller("coffeeController", function($scope, $http, $location, $cookies){
 		if($cookies.get("username")){
 			$scope.message = "Welcome back: " + $cookies.get("username");
-			$scope.loggedOut = false;
+			$("#login").hide();
+			$("#logout").show();
 		}else{
-			$scope.message = false;
-			$scope.loggedOut = true;
+			$("#login").show();
+			$("#logout").hide();
 		}
 		
 
 		$scope.loginForm = function(){
-		$http.post(apiPath + "login", {
-			username: $scope.username,
-			password: $scope.password
-		}).then(function successCallback(response){
-			if(response.data.success == "found"){
-				$cookies.put("token", response.data.token);
-				$cookies.put("username", $scope.username);
-				$scope.loggedOut = false;
-				$location.path("/options");
-			}else if(response.data.failure == "noUser"){
-				$scope.errorMessage = "No such user in the db";
-			}else if(response.data.failure == "badPassword"){
-				$scope.errorMessage = "Bad password for this user.";
-			}
-		}, function errorCallback(response){
-			console.log(response.status);
-		});
-	}
+			$http.post(apiPath + "login", {
+				username: $scope.username,
+				password: $scope.password
+			}).then(function successCallback(response){
+				if(response.data.success == "found"){
+					$cookies.put("token", response.data.token);
+					$cookies.put("username", $scope.username);
+					$("#login").hide();
+					$("#logout").show();
+					$location.path("/options");
+				}else if(response.data.failure == "noUser"){
+					$scope.errorMessage = "No such user in the db";
+				}else if(response.data.failure == "badPassword"){
+					$scope.errorMessage = "Bad password for this user.";
+				}
+			}, function errorCallback(response){
+				console.log(response.status);
+			});
+		}
 
 
 	$scope.registerForm = function(form){
@@ -86,7 +88,8 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 			}).then(function successCallback(response){
 					$cookies.put("token", response.data.token);
 					$cookies.put("username", $scope.username);
-					$scope.loggedOut = false;
+					$("#login").hide();
+					$("#logout").show();
 					$location.path("/options");
 			}, function errorCallback(response){
 				console.log(response.status);
@@ -97,8 +100,8 @@ coffeeApp.controller("coffeeController", function($scope, $http, $location, $coo
 	$scope.logOut = function(){
 		$cookies.remove("token");
 		$cookies.remove("username");
-		$scope.message = false;
-		$scope.loggedOut = true;
+		$("#login").show();
+		$("#logout").hide();
 	}
 
 });
