@@ -6,7 +6,6 @@
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-aNUYGqSUL9wG/vP7+cWZ5QOM4gsQou3sBfWRr/8S3R1Lv0rysEmnwsRKMbhiQX/O" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 	<script type="text/javascript" src="js/angular-route.min.js"></script>
@@ -20,16 +19,16 @@
 
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
-			<div class="col-sm-3"><a href="#/">
+			<div class="col-sm-3 col-xs-4"><a href="#/">
 				<img src="img/dc_roasters.png"/></a></div>
-			<div class="col-sm-4"></div>
-			<div id="logout" class="col-sm-5">
+			<div class="col-sm-4 hidden-xs"></div>
+			<div id="logout" class="col-sm-5 col-xs-8">
 				<a href="#/" ng-click="logOut()">
 					<button class="btn btn-white" type="button">Logout</button>
 				</a>
 				<h3>{{message}}</h3>
 			</div>
-			<div id="login" class="col-sm-5">
+			<div id="login" class="col-sm-5 col-xs-8">
 				<a href="#/login">
 					<button class="btn btn-white" type="button">Login</button>
 				</a>
@@ -42,7 +41,7 @@
 
 	<div ng-view></div>
 
-	<div class="footer col-sm-12 text-center">
+	<div class="footer col-xs-12 text-center">
   		<p>&copy 2015 DigitalCrafts Brews</p>
 	</div>
 

@@ -67,14 +67,16 @@ body {
 
 /* line 51, ../../compass/sass/_main.scss */
 #index-wrapper {
+  margin-top: 90px;
   font-family: 'Roboto Slab', serif;
 }
 /* line 54, ../../compass/sass/_main.scss */
 #index-wrapper #better-wrapper {
-  height: 400px;
+  min-height: 400px;
   background: url("../img/coffee.jpg") no-repeat;
-  background-position: 0px -250px;
-  background-size: cover;
+  background-position: left, top;
+  background-size: 100%;
+  color: #284741;
 }
 /* line 60, ../../compass/sass/_main.scss */
 #index-wrapper #how-wrapper {
@@ -116,6 +118,7 @@ body {
 /* line 93, ../../compass/sass/_main.scss */
 #index-wrapper #step-two #tilted-grower {
   transform: rotate(-10deg);
+  margin-bottom: 30px;
 }
 /* line 95, ../../compass/sass/_main.scss */
 #index-wrapper #step-two #tilted-grower img {
@@ -124,7 +127,7 @@ body {
 /* line 100, ../../compass/sass/_main.scss */
 #index-wrapper #step-three {
   padding-top: 60px;
-  height: 400px;
+  min-height: 400px;
   background: black;
   color: #edebe3;
 }
