@@ -1,19 +1,19 @@
 <div id="payment-wrapper">
 	<div ng-show="message" id="small-nav-bar" class="">
-	  <div class="icon-holder col-sm-12">
-	    <a class="col-sm-2 col-sm-offset-2" href="#/">
+	  <div class="icon-holder col-xs-12">
+	    <a class="col-xs-2 col-xs-offset-2" href="#/">
 	      <div class="one"><i class="fa fa-coffee fa-2x" aria-hidden="true"></i></div>
 	      <div class="icons">1. Home</div>
 	    </a>
-	      <a class="col-sm-2" href="#/options">
+	      <a class="col-xs-2" href="#/options">
 	      <div class="two"><i class="fa fa-sliders fa-2x" aria-hidden="true"></i></div>
 	      <div class="icons">2. Options</div>
 	    </a>
-	    <a class="col-sm-2" href="#/shipping">
+	    <a class="col-xs-2" href="#/shipping">
 	      <div class="three"><i class="fa fa-truck fa-2x" aria-hidden="true"></i></div>
 	      <div class="icons">3. Delivery</div>
 	    </a>
-	    <a class="col-sm-2 active" href="#/payment">
+	    <a class="col-xs-2 active" href="#/payment">
 	      <div class="four"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></div>
 	      <div class="icons">4. Payment</div>
 	    </a>
@@ -24,38 +24,38 @@
 			<h1>Payment</h1>
 			<h3>Order summary below</h3>
 		</div>
-		<div id="summary-wrapper" class="col-sm-12">
+		<div id="summary-wrapper" class="col-xs-12">
 			<div class="row">
 				<div id="choices-wrapper" class="section">
 						<h1>Choices</h1>
-						<div class="col-sm-6">Grind</div><div class="col-sm-6">{{grindType}}</div>
-						<div class="col-sm-6">Frequency of Delivery</div><div class="col-sm-6">{{frequency}}</div>
-						<div class="col-sm-6">Coffee in Pounds</div><div class="col-sm-6">{{quantity}}</div>
+						<div class="col-xs-6">Grind:</div><div class="col-xs-6">{{grindType}}</div>
+						<div class="col-xs-6">Frequency of Delivery:</div><div class="col-xs-6">{{frequency}}</div>
+						<div class="col-xs-6">Coffee in Pounds:</div><div class="col-xs-6">{{quantity}}</div>
 				</div>
 			</div>
 			<div class="row">
 				<div id="delivery-info-wrapper" class="section">
 					<h1>Delivery Information</h1>
-					<div class="col-sm-6">Full Name</div><div class="col-sm-6">{{fullname}}</div>
-					<div class="col-sm-6">Address</div><div class="col-sm-6">{{address1}}</div>
-					<div class="col-sm-6">Address2</div><div class="col-sm-6">{{address2}}</div>
-					<div class="col-sm-6">City</div><div class="col-sm-6">{{city}}</div>
-					<div class="col-sm-6">State</div><div class="col-sm-6">{{state}}</div>
-					<div class="col-sm-6">Zip</div><div class="col-sm-6">{{zipCode}}</div>
-					<div class="col-sm-6">Delivery Date</div><div class="col-sm-6">{{date}}</div>
+					<div class="col-xs-6">Full Name:</div><div class="col-xs-6">{{fullname}}</div>
+					<div class="col-xs-6">Address:</div><div class="col-xs-6">{{address1}}</div>
+					<div class="col-xs-6">Address2:</div><div class="col-xs-6">{{address2}}</div>
+					<div class="col-xs-6">City:</div><div class="col-xs-6">{{city}}</div>
+					<div class="col-xs-6">State:</div><div class="col-xs-6">{{state}}</div>
+					<div class="col-xs-6">Zip:</div><div class="col-xs-6">{{zipCode}}</div>
+					<div class="col-xs-6">Delivery Date:</div><div class="col-xs-6">{{date}}</div>
 				</div>
 			</div>
 			<div class="row">
 				<div id="delivery-info-wrapper" class="section">
 					<h1>Current Charge</h1>
-					<div class="col-sm-6">Quantity</div><div class="col-sm-6">{{quantity}} x $20.00/lb = ${{quantity * 20}}</div>
-					<div class="col-sm-6">Shipping</div><div class="col-sm-6">FREE!</div>
-					<div class="col-sm-6">Total</div><div class="col-sm-6">${{quantity * 20}}</div>
+					<div class="col-xs-6">Quantity:</div><div class="col-xs-6">{{quantity}} x $20.00/lb = ${{quantity * 20}}</div>
+					<div class="col-xs-6">Shipping:</div><div class="col-xs-6">FREE!</div>
+					<div class="col-xs-6">Total:</div><div class="col-xs-6">${{quantity * 20}}</div>
 				</div>
 			</div>		
 		</div>
 		<div id="button-holder text-center">
-			<form class="col-sm-2 col-sm-offset-4"action="http://localhost:3000/payment" method="POST">
+			<form class="col-xs-2 col-xs-offset-4"action="http://localhost:3000/payment" method="POST">
 			  <script
 			    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 			    data-key="pk_test_ViWLfNRoKDqu24EF4Y8aBvaL"
@@ -69,7 +69,7 @@
 			  <input type="hidden" name="stripeEmail" value="testEmail@test.com">
 			</form>
 			<a href="#/options">
-				<button id="cancel" type="button" class="btn btn-failure col-sm-2 col-sm-offset-2">Cancel Order</button>
+				<button id="cancel" type="button" class="btn btn-failure col-xs-2 col-xs-offset-2">Cancel Order</button>
 			</a>
 		</div>
 	</div>

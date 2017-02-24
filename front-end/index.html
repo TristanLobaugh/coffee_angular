@@ -21,14 +21,13 @@
 		<div class="container-fluid">
 			<div class="col-sm-3 col-xs-4"><a href="#/">
 				<img src="img/dc_roasters.png"/></a></div>
-			<div class="col-sm-4 hidden-xs"></div>
-			<div id="logout" class="col-sm-5 col-xs-8">
+			<div id="logout" class="">
 				<a href="#/" ng-click="logOut()">
 					<button class="btn btn-white" type="button">Logout</button>
 				</a>
-				<h3>{{message}}</h3>
 			</div>
-			<div id="login" class="col-sm-5 col-xs-8">
+			<h3 class="col-xs-12 text-center nav-message" ng-show="message">{{message}}</h3>
+			<div id="login" class="">
 				<a href="#/login">
 					<button class="btn btn-white" type="button">Login</button>
 				</a>
